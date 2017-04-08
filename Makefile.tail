@@ -1,0 +1,28 @@
+##### End of variables to change
+
+SRC_PATH := .
+
+SL_DEVICE := sldevice
+SL_OBJS := $(SRC_PATH)/sldevice.$(OBJ) \
+	$(SRC_PATH)/mydev.$(OBJ) \
+	$(SRC_PATH)/my_devchan_listener.$(OBJ) \
+
+			
+LOCAL_LIBS	:=
+LIBS		:= $(LOCAL_LIBS) $(LIBS_FOR_CONSOLE_APPLICATION)
+
+ALL = $(SL_DEVICE)
+
+all: $(ALL)
+
+.$(C).$(OBJ):
+	$(C_COMPILER) -c $(C_FLAGS) $< -o $@ 
+
+.$(CPP).$(OBJ):
+	$(CPLUSPLUS_COMPILER) -c $(CPLUSPLUS_FLAGS) $< -o $@ 
+
+$(SL_DEVICE)$(EXE):$(SL_OBJS)
+	$(LINK) $@ $(CONSOLE_LINK_OPTS) $(SL_OBJS) $(LIBS)
+
+clean:
+	-rm -rf *.$(OBJ) $(ALL) 

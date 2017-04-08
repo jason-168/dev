@@ -1,0 +1,36 @@
+{
+	"list":[
+		{
+			"file":"./res/vid_bigbuckbunny.av",
+			"afmt":{
+				"acID":1,
+				"srte":22050,
+				"channels":2
+			},
+			"vfmt":{
+				"vcID":1,
+				"width":640,
+				"height":360,
+				"frmR":24,
+				"ifiv":30
+			},
+			"duration":60
+		},
+		{
+			"file":"./res/xixuedai.av",
+			"afmt":{
+				"acID":1,
+				"srte":44100,
+				"channels":2
+			},
+			"vfmt":{
+				"vcID":1,
+				"width":640,
+				"height":352,
+				"frmR":15,
+				"ifiv":30
+			},
+			"duration":178
+		}
+	]
+}

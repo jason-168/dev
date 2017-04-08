@@ -1,0 +1,15 @@
+#!/bin/sh
+
+usage() {
+    echo "Usage: $0 <os-platform>"
+    exit 1
+}
+
+if [ $# -ne 1 ]
+then
+    usage $*
+fi
+
+/bin/rm -f Makefile
+cat config.$1 Makefile.tail > Makefile
+chmod a-w Makefile
